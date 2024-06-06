@@ -19,7 +19,7 @@ export const findAll = (callback: Function) => {
         datanastere: row.datanastere,
         telefon: row.telefon,
         dataadaugare: row.dataadaugare,
-        poza:row.poza,
+        poza: row.poza,
         actiune: "",
       };
       users.push(user);

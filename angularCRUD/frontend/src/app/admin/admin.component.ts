@@ -1,6 +1,9 @@
-import { User } from './../models/user';
+
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser'; 
 import { ApiService } from '../api.service';
+import { User } from './../models/user';
+
 
 @Component({
   selector: 'app-admin',
@@ -9,7 +12,7 @@ import { ApiService } from '../api.service';
 })
 export class AdminComponent implements OnInit {
   users: any[]=[];
-  widthImg:number=150;
+  widthImg:number=80;
   selectedUser: User = { 
     id: 0, 
     nume: '', 
