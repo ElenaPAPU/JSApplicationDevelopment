@@ -51,12 +51,13 @@ export const findOne = (userId: number, callback: Function) => {
 };
 // create user
 export const create = (user: User, callback: Function) => {
+  let mydate=user.datanastere.toISOString().split('T')[0]
   const queryString =
     "INSERT INTO jsusers (nume, prenume, email, datanastere, telefon, poza) VALUES (?, ?, ?, ?, ?, ?)";
     console.log(user);
   db.query(
     queryString,
-    [user.nume, user.prenume, user.email, user.datanastere, user.telefon, user.poza],
+    [user.nume, user.prenume, user.email, mydate, user.telefon, user.poza],
     (err, result) => {
       if (err) {
         callback(err);
@@ -72,9 +73,10 @@ export const create = (user: User, callback: Function) => {
 
 // update user
 export const update = (user: User, callback: Function) => {
-  const queryString = `UPDATE jsusers SET nume=?, prenume=?,email=?, telefon=?, datanastere=? WHERE id=?`;
+  let mydate=user.datanastere.toISOString().split('T')[0]
+  const queryString = `UPDATE jsusers SET nume=?, prenume=?,email=?, telefon=?, datanastere, poza=? WHERE id=?`;
 
-  db.query(queryString, [user.nume, user.prenume,user.email,user.telefon,user.datanastere, user.id], (err, result) => {
+  db.query(queryString, [user.nume, user.prenume,user.email,user.telefon, mydate, user.poza, user.id], (err, result) => {
     if (err) {
       callback(err);
     }

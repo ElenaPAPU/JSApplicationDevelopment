@@ -1,22 +1,26 @@
 <template>
-  <div>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld id=123 msg="Welcome to Your Vue.js App"/>
-  <HelloWorld msg="Welcome to Your Vue.js App1"/>
-  <HelloWorld msg="Welcome to Your Vue.js App2"/>
-  <HelloWorld msg="Welcome to Your Vue.js App3"/>
-  <HelloWorld msg="Welcome to Your Vue.js App4"/>
-  <h1>Mesaj APP</h1>
-  </div>
+<div>
+  <NavBar />
+
+    <div class="container mt-3">
+      <router-view />
+    </div>
+    
+    <Footer />
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import NavBar from './components/NavBar.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+   
+    Footer,
+    NavBar
   }
 }
 </script>
