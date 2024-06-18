@@ -31,7 +31,7 @@ function Articol1() {
     return (
       <>
         <h1>Suntem in zona A</h1>
-        <p>autorul este{autor}</p>
+        <p>autorul este {autor}</p>
       </>
     );
   }
